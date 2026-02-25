@@ -1,79 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <title>For You ❤️</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #fff0f5;
-      color: #333;
-    }
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    h1, h2 {
-      color: #d6336c;
-    }
-    .photos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .photos img {
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    button {
-      padding: 12px 25px;
-      font-size: 16px;
-      background: #d6336c;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #ad1457;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(#ffe6f0,#fff);
+  overflow:hidden;
+}
+
+.slide{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  padding:30px;
+}
+
+h1{
+  color:#d6336c;
+}
+
+p{
+  font-size:18px;
+  line-height:1.8;
+}
+
+button{
+  margin-top:20px;
+  padding:12px 30px;
+  border:none;
+  border-radius:25px;
+  background:#d6336c;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.slider{
+  display:flex;
+  transition:0.6s;
+}
+
+.photos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+  max-width:800px;
+}
+
+.photos img{
+  width:100%;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+</style>
 </head>
+
 <body>
 
-<section>
-  <h1>Hey Love ❤️</h1>
-  <p>I made something special just for you</p>
-</section>
+<div class="slider" id="slider">
 
-<section>
-  <h2>Our Story</h2>
-  <p>From strangers to something that feels magical…</p>
-</section>
-
-<section>
-  <h2>My Favorite Photos of You 📸</h2>
-  <div class="photos">
-    <img src="photo1.jpeg">
-    <img src="photo2.jpg">
-    <img src="photo3.jpg">
+  <!-- Slide 1 -->
+  <div class="slide">
+    <h1>Hey… ❤️</h1>
+    <p>
+      Bas poochna tha<br>
+      Aap acchi hongi na?<br>
+      Sab theek chal raha hoga…<br>
+      Aaj bhi waise hi muskurati hogi 💕
+    </p>
+    <button onclick="next()">Next</button>
   </div>
-</section>
 
-<section>
-  <h2>What I Feel</h2>
-  <p>You make my ordinary days feel extraordinary 💕</p>
-</section>
+  <!-- Slide 2 -->
+  <div class="slide">
+    <h1>Ek Yaad 💫</h1>
+    <p>
+      Jab main pehli baar tumse<br>
+      Third class mein mila tha…<br><br>
+      Woh hasi-mazaak,<br>
+      woh chhoti chhoti baatein,<br>
+      pata hi nahi chala kab<br>
+      woh pal khaas ban gaye 💖
+    </p>
+    <button onclick="next()">Next</button>
+  </div>
 
-<section>
-  <h2>So… ❤️</h2>
-  <p>Will you be mine?</p>
-  <button onclick="alert('I hope your answer is YES 😘')">Yes</button>
-</section>
+  <!-- Slide 3 -->
+  <div class="slide">
+    <h1>Sach ❤️</h1>
+    <p>
+      Main kabhi plan nahi kar paaya<br>
+      ki tumse pyaar ho jaaye…<br><br>
+      Bas dheere-dheere<br>
+      tum meri aadat ban gayi 💕<br><br>
+      <b>Mujhe tum pasand ho</b>
+    </p>
+    <button onclick="next()">Next</button>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide">
+    <h1>Kuch Tasveerein 📸</h1>
+    <div class="photos">
+      <img src="photo1.jpg">
+      <img src="photo2.jpg">
+      <img src="photo3.jpg">
+    </div>
+    <button onclick="next()">Next</button>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="slide">
+    <h1>Ab Tumhari Baari ❤️</h1>
+    <p>
+      Maine apna dil rakh diya hai<br>
+      Ab tum kya sochti ho? 💖
+    </p>
+    <button onclick="alert('Tumhari muskurahat hi mere liye kaafi hai ❤️')">Haan 💗</button>
+    <button style="background:#999" onclick="alert('Main intezaar kar lunga 🌸')">Time Chahiye 🤍</button>
+  </div>
+
+</div>
+
+<script>
+let index=0;
+function next(){
+  index++;
+  document.getElementById("slider").style.transform =
+    "translateX(-"+index*100+"vw)";
+}
+</script>
 
 </body>
 </html>
