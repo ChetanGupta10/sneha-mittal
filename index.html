@@ -2,64 +2,85 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>For You ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
 
 <style>
-body{
+*{
+  box-sizing:border-box;
   margin:0;
+  padding:0;
+}
+
+body{
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(#ffe6f0,#fff);
+  background:#fff0f6;
   overflow:hidden;
 }
 
+/* SLIDER */
+.slider{
+  display:flex;
+  width:500vw;
+  height:100vh;
+  transition:transform 0.6s ease;
+}
+
+/* EACH SLIDE */
 .slide{
   width:100vw;
   height:100vh;
+  padding:30px 20px;
   display:flex;
-  align-items:center;
-  justify-content:center;
   flex-direction:column;
+  justify-content:center;
   text-align:center;
-  padding:30px;
 }
 
+/* TEXT */
 h1{
   color:#d6336c;
+  margin-bottom:15px;
+  font-size:26px;
 }
 
 p{
   font-size:18px;
-  line-height:1.8;
+  line-height:1.7;
+  color:#333;
 }
 
-button{
-  margin-top:20px;
-  padding:12px 30px;
+/* BUTTON */
+.btn{
+  margin-top:30px;
+  padding:14px;
+  font-size:18px;
   border:none;
-  border-radius:25px;
+  border-radius:30px;
   background:#d6336c;
   color:white;
-  font-size:16px;
-  cursor:pointer;
+  width:80%;
+  max-width:300px;
+  align-self:center;
 }
 
-.slider{
-  display:flex;
-  transition:0.6s;
-}
-
+/* PHOTOS */
 .photos{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  grid-template-columns:1fr 1fr;
   gap:15px;
-  max-width:800px;
+  margin-top:20px;
 }
 
 .photos img{
   width:100%;
   border-radius:15px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* LAST BUTTONS */
+.small-btn{
+  margin-top:15px;
+  background:#aaa;
 }
 </style>
 </head>
@@ -72,71 +93,75 @@ button{
   <div class="slide">
     <h1>Hey… ❤️</h1>
     <p>
-      Bas poochna tha<br>
+      Bas poochna tha…<br>
       Aap acchi hongi na?<br>
-      Sab theek chal raha hoga…<br>
-      Aaj bhi waise hi muskurati hogi 💕
+      Sab theek chal raha hoga?<br>
+      Aaj bhi waise hi muskurati hogi 🙂
     </p>
-    <button onclick="next()">Next</button>
+    <button class="btn" onclick="next()">Next</button>
   </div>
 
   <!-- Slide 2 -->
   <div class="slide">
-    <h1>Ek Yaad 💫</h1>
+    <h1>Ek Purani Yaad 💫</h1>
     <p>
       Jab main pehli baar tumse<br>
-      Third class mein mila tha…<br><br>
-      Woh hasi-mazaak,<br>
-      woh chhoti chhoti baatein,<br>
-      pata hi nahi chala kab<br>
-      woh pal khaas ban gaye 💖
+      third class mein mila tha…<br><br>
+      Woh hasi, woh shararat,<br>
+      woh chhoti si class<br>
+      Aaj bhi yaad hai ❤️
     </p>
-    <button onclick="next()">Next</button>
+    <button class="btn" onclick="next()">Next</button>
   </div>
 
   <!-- Slide 3 -->
   <div class="slide">
-    <h1>Sach ❤️</h1>
+    <h1>Sach Kehun… 💌</h1>
     <p>
-      Main kabhi plan nahi kar paaya<br>
-      ki tumse pyaar ho jaaye…<br><br>
-      Bas dheere-dheere<br>
-      tum meri aadat ban gayi 💕<br><br>
-      <b>Mujhe tum pasand ho</b>
+      Mujhe kabhi pata hi nahi chala<br>
+      ki kab tum meri aadat ban gayi…<br><br>
+      Bas itna jaanta hoon<br>
+      mujhe tum pasand ho ❤️
     </p>
-    <button onclick="next()">Next</button>
+    <button class="btn" onclick="next()">Next</button>
   </div>
 
   <!-- Slide 4 -->
   <div class="slide">
     <h1>Kuch Tasveerein 📸</h1>
+    <p>Jinmein meri feelings chhupi hain 💕</p>
     <div class="photos">
-      <img src="photo1.jpg">
+      <img src="photo1.jpeg">
       <img src="photo2.jpg">
       <img src="photo3.jpg">
+      
     </div>
-    <button onclick="next()">Next</button>
+    <button class="btn" onclick="next()">Next</button>
   </div>
 
   <!-- Slide 5 -->
   <div class="slide">
-    <h1>Ab Tumhari Baari ❤️</h1>
+    <h1>Ab Tumhari Rai ❤️</h1>
     <p>
-      Maine apna dil rakh diya hai<br>
-      Ab tum kya sochti ho? 💖
+      Maine apna dil rakh diya hai…<br>
+      Ab tum kya sochti ho?
     </p>
-    <button onclick="alert('Tumhari muskurahat hi mere liye kaafi hai ❤️')">Haan 💗</button>
-    <button style="background:#999" onclick="alert('Main intezaar kar lunga 🌸')">Time Chahiye 🤍</button>
+    <button class="btn" onclick="alert('Tumhari ek muskurahat kaafi hai ❤️')">
+      Haan 💗
+    </button>
+    <button class="btn small-btn" onclick="alert('Main intezaar kar lunga 🌸')">
+      Thoda Time 🤍
+    </button>
   </div>
 
 </div>
 
 <script>
-let index=0;
+let i = 0;
 function next(){
-  index++;
+  i++;
   document.getElementById("slider").style.transform =
-    "translateX(-"+index*100+"vw)";
+    `translateX(-${i*100}vw)`;
 }
 </script>
 
