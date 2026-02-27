@@ -7,80 +7,76 @@
 
 <style>
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 body{
-  font-family: 'Poppins', sans-serif;
-  background:#fff0f6;
+  font-family: 'Segoe UI', sans-serif;
   overflow:hidden;
 }
 
-/* SLIDER */
+/* Beautiful Soft Romantic Gradient */
+body{
+  background: linear-gradient(135deg,#ffdde1,#ee9ca7);
+}
+
+/* Slider */
 .slider{
   display:flex;
   width:500vw;
   height:100vh;
-  transition:transform 0.6s ease;
+  transition:transform 0.6s ease-in-out;
 }
 
-/* EACH SLIDE */
+/* Each Slide */
 .slide{
   width:100vw;
   height:100vh;
-  padding:30px 20px;
+  padding:30px;
   display:flex;
   flex-direction:column;
   justify-content:center;
+  align-items:center;
   text-align:center;
+  color:white;
 }
 
-/* TEXT */
 h1{
-  color:#d6336c;
+  font-size:28px;
   margin-bottom:15px;
-  font-size:26px;
 }
 
 p{
   font-size:18px;
   line-height:1.7;
-  color:#333;
+  max-width:350px;
 }
 
-/* BUTTON */
+/* Button */
 .btn{
   margin-top:30px;
-  padding:14px;
+  padding:14px 25px;
   font-size:18px;
   border:none;
   border-radius:30px;
-  background:#d6336c;
-  color:white;
+  background:white;
+  color:#d6336c;
+  font-weight:bold;
   width:80%;
-  max-width:300px;
-  align-self:center;
+  max-width:280px;
 }
 
-/* PHOTOS */
-.photos{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
+/* Single Photo */
+.photo-box{
   margin-top:20px;
 }
 
-.photos img{
-  width:100%;
-  border-radius:15px;
-}
-
-/* LAST BUTTONS */
-.small-btn{
-  margin-top:15px;
-  background:#aaa;
+.photo-box img{
+  width:230px;
+  border-radius:20px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -103,38 +99,33 @@ p{
 
   <!-- Slide 2 -->
   <div class="slide">
-    <h1>Ek Purani Yaad 💫</h1>
+    <h1>Ek Yaad 💫</h1>
     <p>
       Jab main pehli baar tumse<br>
       third class mein mila tha…<br><br>
       Woh hasi, woh shararat,<br>
-      woh chhoti si class<br>
-      Aaj bhi yaad hai ❤️
+      woh chhoti si duniya ❤️
     </p>
     <button class="btn" onclick="next()">Next</button>
   </div>
 
   <!-- Slide 3 -->
   <div class="slide">
-    <h1>Sach Kehun… 💌</h1>
+    <h1>Sach ❤️</h1>
     <p>
-      Mujhe kabhi pata hi nahi chala<br>
-      ki kab tum meri aadat ban gayi…<br><br>
-      Bas itna jaanta hoon<br>
-      mujhe tum pasand ho ❤️
+      Mujhe pata hi nahi chala<br>
+      kab tum meri aadat ban gayi…<br><br>
+      Bas itna jaanta hoon —<br>
+      Mujhe tum pasand ho 💖
     </p>
     <button class="btn" onclick="next()">Next</button>
   </div>
 
-  <!-- Slide 4 -->
+  <!-- Slide 4 (Single Photo) -->
   <div class="slide">
-    <h1>Kuch Tasveerein 📸</h1>
-    <p>Jinmein meri feelings chhupi hain 💕</p>
-    <div class="photos">
-      <img src="photo1.jpeg">
-      <img src="photo2.jpg">
-      <img src="photo3.jpg">
-      
+    <h1>Bas Tum 📸</h1>
+    <div class="photo-box">
+      <img src="photo.jpeg" alt="Her Photo">
     </div>
     <button class="btn" onclick="next()">Next</button>
   </div>
@@ -143,13 +134,13 @@ p{
   <div class="slide">
     <h1>Ab Tumhari Rai ❤️</h1>
     <p>
-      Maine apna dil rakh diya hai…<br>
+      Maine apna dil keh diya…<br>
       Ab tum kya sochti ho?
     </p>
-    <button class="btn" onclick="alert('Tumhari ek muskurahat kaafi hai ❤️')">
+    <button class="btn" onclick="alert('Tumhari muskurahat hi meri jeet hai ❤️')">
       Haan 💗
     </button>
-    <button class="btn small-btn" onclick="alert('Main intezaar kar lunga 🌸')">
+    <button class="btn" style="margin-top:15px;background:#f8f8f8;">
       Thoda Time 🤍
     </button>
   </div>
